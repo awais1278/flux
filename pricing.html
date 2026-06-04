@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,9 +33,8 @@
 </ul>
 
 <section class="hero" style="min-height:70svh;padding-top:140px">
-  <div class="hero-bg"></div>
   <div class="hero-content reveal">
-    <div class="t-label" style="margin-bottom:16px">Pricing</div>
+    <div class="t-label" style="margin-bottom:18px">Pricing</div>
     <h1 class="t-h1">Simple, transparent pricing</h1>
     <p class="hero-sub">Start free. Scale as you grow. No hidden fees, no surprises.</p>
   </div>
@@ -50,9 +50,9 @@
 
     <div class="pricing-grid reveal reveal-delay-1">
       <div class="plan">
-        <div class="plan-tier">Starter</div>
+        <div class="plan-tier">Solo</div>
         <div class="plan-price" data-monthly="$0" data-yearly="$0">$0<span>/mo</span></div>
-        <div class="plan-desc">Perfect for individuals and small side projects.</div>
+        <div class="plan-desc">Perfect for individuals and small side projects exploring the platform.</div>
         <ul class="plan-features">
           <li>Up to 3 projects</li>
           <li>1 team member</li>
@@ -60,14 +60,14 @@
           <li>7-day history</li>
           <li>Community support</li>
         </ul>
-        <a href="contact.html" class="btn btn-secondary plan-btn">Get Started Free</a>
+        <a href="contact.html" class="btn btn-outline plan-btn">Get Started Free</a>
       </div>
 
       <div class="plan popular">
         <div class="pop-badge">Most Popular</div>
         <div class="plan-tier">Pro</div>
         <div class="plan-price" data-monthly="$29" data-yearly="$23">$29<span>/mo</span></div>
-        <div class="plan-desc">For growing teams that need more power and flexibility.</div>
+        <div class="plan-desc">For growing teams that need more power, flexibility, and AI insights.</div>
         <ul class="plan-features">
           <li>Unlimited projects</li>
           <li>Up to 10 team members</li>
@@ -82,16 +82,52 @@
       <div class="plan">
         <div class="plan-tier">Enterprise</div>
         <div class="plan-price">Custom<span></span></div>
-        <div class="plan-desc">For large organizations with advanced security and compliance needs.</div>
+        <div class="plan-desc">For large organizations with advanced security, compliance, and scale needs.</div>
         <ul class="plan-features">
           <li>Everything in Pro</li>
           <li>Unlimited team members</li>
           <li>SOC 2 & HIPAA compliance</li>
           <li>SSO & SAML</li>
           <li>Dedicated account manager</li>
-          <li>Custom contracts</li>
+          <li>Custom contracts & SLA</li>
         </ul>
-        <a href="contact.html" class="btn btn-secondary plan-btn">Contact Sales</a>
+        <a href="contact.html" class="btn btn-outline plan-btn">Contact Sales</a>
+      </div>
+    </div>
+
+    <!-- FEATURE COMPARISON MATRIX -->
+    <div class="compare-wrap reveal">
+      <div class="section-header" style="text-align:center;margin:0 auto 40px">
+        <div class="t-label" style="margin-bottom:12px">Compare</div>
+        <h3 class="t-h3">Feature Comparison</h3>
+      </div>
+      <div style="overflow-x:auto">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Solo</th>
+              <th style="color:var(--accent-light)">Pro</th>
+              <th>Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Projects</td><td class="check">3</td><td class="check highlight">Unlimited</td><td class="check">Unlimited</td></tr>
+            <tr><td>Team members</td><td class="check">1</td><td class="check highlight">10</td><td class="check">Unlimited</td></tr>
+            <tr><td>Storage</td><td class="check">5 GB</td><td class="check highlight">100 GB</td><td class="check">Unlimited</td></tr>
+            <tr><td>Real-time sync</td><td class="check">✓</td><td class="check highlight">✓</td><td class="check">✓</td></tr>
+            <tr><td>AI insights</td><td class="dash">—</td><td class="check highlight">✓</td><td class="check">✓</td></tr>
+            <tr><td>Advanced analytics</td><td class="dash">—</td><td class="check highlight">✓</td><td class="check">✓</td></tr>
+            <tr><td>Custom integrations</td><td class="dash">—</td><td class="check highlight">✓</td><td class="check">✓</td></tr>
+            <tr><td>SSO / SAML</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+            <tr><td>SOC 2 compliance</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+            <tr><td>Audit logs</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+            <tr><td>Priority support</td><td class="dash">—</td><td class="check highlight">✓</td><td class="check">✓</td></tr>
+            <tr><td>Dedicated manager</td><td class="dash">—</td><td class="dash">—</td><td class="check">✓</td></tr>
+            <tr><td>API access</td><td class="check">Limited</td><td class="check highlight">Full</td><td class="check">Full + Custom</td></tr>
+            <tr><td>Export & backups</td><td class="dash">—</td><td class="check highlight">✓</td><td class="check">✓</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -124,29 +160,24 @@ window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scro
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobileNav');
 hbtn.addEventListener('click',function(){var open=mnav.classList.toggle('open');hbtn.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';});
 
-// Toggle
 var toggle=document.getElementById('toggleSwitch');
 var monthlyLabel=document.getElementById('monthlyLabel');
 var yearlyLabel=document.getElementById('yearlyLabel');
 var isYearly=false;
-
 toggle.addEventListener('click',function(){
   isYearly=!isYearly;
   toggle.classList.toggle('yearly',isYearly);
   monthlyLabel.classList.toggle('active',!isYearly);
   yearlyLabel.classList.toggle('active',isYearly);
-
   document.querySelectorAll('.plan-price').forEach(function(el){
-    var m=el.getAttribute('data-monthly');
-    var y=el.getAttribute('data-yearly');
-    if(m && y){
-      el.innerHTML=(isYearly?y:m)+'<span>/mo</span>';
-    }
+    var m=el.getAttribute('data-monthly');var y=el.getAttribute('data-yearly');
+    if(m&&y)el.innerHTML=(isYearly?y:m)+'<span>/mo</span>';
   });
 });
 
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+lucide.createIcons();
 </script>
 </body>
 </html>

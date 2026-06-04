@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,10 +33,9 @@
 </ul>
 
 <section class="hero" style="min-height:60svh;padding-top:140px">
-  <div class="hero-bg"></div>
   <div class="hero-content reveal">
-    <div class="t-label" style="margin-bottom:16px">Contact</div>
-    <h1 class="t-h1">Let's start a <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">conversation</span></h1>
+    <div class="t-label" style="margin-bottom:18px">Contact</div>
+    <h1 class="t-h1">Let's start a <span style="background:linear-gradient(135deg,#a78bfa,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent">conversation</span></h1>
     <p class="hero-sub">Whether you're ready to get started or just exploring, we'd love to hear from you.</p>
   </div>
 </section>
@@ -46,32 +46,20 @@
       <div>
         <div class="contact-info">
           <div class="contact-item">
-            <div class="contact-icon">📧</div>
-            <div>
-              <h4>Email</h4>
-              <p>hello@flux.app</p>
-            </div>
+            <div class="contact-icon"><i data-lucide="mail"></i></div>
+            <div><h4>Email</h4><p>hello@flux.app</p></div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">📞</div>
-            <div>
-              <h4>Phone</h4>
-              <p>+1 (415) 555-0192</p>
-            </div>
+            <div class="contact-icon"><i data-lucide="phone"></i></div>
+            <div><h4>Phone</h4><p>+1 (415) 555-0192</p></div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div>
-              <h4>Office</h4>
-              <p>548 Market Street, Suite 250<br>San Francisco, CA 94104</p>
-            </div>
+            <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+            <div><h4>Office</h4><p>548 Market Street, Suite 250<br>San Francisco, CA 94104</p></div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">🕐</div>
-            <div>
-              <h4>Hours</h4>
-              <p>Mon – Fri: 9am – 6pm PST</p>
-            </div>
+            <div class="contact-icon"><i data-lucide="clock"></i></div>
+            <div><h4>Hours</h4><p>Mon – Fri: 9am – 6pm PST</p></div>
           </div>
         </div>
       </div>
@@ -104,10 +92,10 @@
           </div>
           <button type="submit" class="btn btn-primary form-submit" id="submitBtn">Send Message →</button>
         </form>
-        <div id="formSuccess" style="display:none;text-align:center;padding:40px 20px">
-          <div style="font-size:48px;margin-bottom:16px">✅</div>
-          <h3 style="font-size:24px;font-weight:600;margin-bottom:8px">Message Sent!</h3>
-          <p style="color:var(--muted)">We'll get back to you within 24 hours.</p>
+        <div id="formSuccess" style="display:none;text-align:center;padding:48px 24px">
+          <div style="width:64px;height:64px;background:linear-gradient(135deg,var(--accent),#5b21b6);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><i data-lucide="check" style="width:28px;height:28px;color:#fff"></i></div>
+          <h3 style="font-size:22px;font-weight:600;margin-bottom:8px">Message Sent!</h3>
+          <p style="color:var(--text-secondary)">We'll get back to you within 24 hours.</p>
         </div>
       </div>
     </div>
@@ -133,7 +121,6 @@ window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scro
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobileNav');
 hbtn.addEventListener('click',function(){var open=mnav.classList.toggle('open');hbtn.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';});
 
-// Form
 var form=document.getElementById('contactForm');
 if(form){
   form.addEventListener('submit',function(e){
@@ -143,12 +130,14 @@ if(form){
     setTimeout(function(){
       form.style.display='none';
       document.getElementById('formSuccess').style.display='block';
+      lucide.createIcons();
     },1200);
   });
 }
 
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+lucide.createIcons();
 </script>
 </body>
 </html>

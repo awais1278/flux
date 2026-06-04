@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,10 +33,9 @@
 </ul>
 
 <section class="hero" style="min-height:60svh;padding-top:140px">
-  <div class="hero-bg"></div>
   <div class="hero-content reveal">
-    <div class="t-label" style="margin-bottom:16px">About</div>
-    <h1 class="t-h1">We're building the <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent">future of work</span></h1>
+    <div class="t-label" style="margin-bottom:18px">About</div>
+    <h1 class="t-h1">We're building the <span style="background:linear-gradient(135deg,#a78bfa,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent">future of work</span></h1>
     <p class="hero-sub">Founded in 2024, Flux is a small team of designers, engineers, and product thinkers obsessed with making work feel effortless.</p>
   </div>
 </section>
@@ -43,12 +43,15 @@
 <section class="section" style="padding-top:0">
   <div class="container">
     <div class="section-header reveal">
-      <div class="t-label" style="margin-bottom:12px">The Team</div>
+      <div class="t-label" style="margin-bottom:14px">The Team</div>
       <h2 class="t-h2">Meet the people behind the product</h2>
     </div>
     <div class="team-grid reveal reveal-delay-1">
       <div class="team-card">
-        <div class="team-photo">👨‍💻</div>
+        <div class="team-photo">
+          <div class="team-initials">AC</div>
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face" alt="Alex Chen" loading="lazy">
+        </div>
         <div class="team-info">
           <div class="team-name">Alex Chen</div>
           <div class="team-role">CEO & Co-Founder</div>
@@ -56,7 +59,10 @@
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo">👩‍🎨</div>
+        <div class="team-photo">
+          <div class="team-initials">MP</div>
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop&crop=face" alt="Maya Patel" loading="lazy">
+        </div>
         <div class="team-info">
           <div class="team-name">Maya Patel</div>
           <div class="team-role">Head of Design</div>
@@ -64,7 +70,10 @@
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo">👨‍🔬</div>
+        <div class="team-photo">
+          <div class="team-initials">JW</div>
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face" alt="James Wilson" loading="lazy">
+        </div>
         <div class="team-info">
           <div class="team-name">James Wilson</div>
           <div class="team-role">CTO & Co-Founder</div>
@@ -72,7 +81,10 @@
         </div>
       </div>
       <div class="team-card">
-        <div class="team-photo">👩‍💼</div>
+        <div class="team-photo">
+          <div class="team-initials">SK</div>
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop&crop=face" alt="Sarah Kim" loading="lazy">
+        </div>
         <div class="team-info">
           <div class="team-name">Sarah Kim</div>
           <div class="team-role">Head of Growth</div>
@@ -83,18 +95,18 @@
   </div>
 </section>
 
-<div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<div style="background:var(--bg-elevated);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <section class="section">
     <div class="container">
       <div class="section-header reveal">
-        <div class="t-label" style="margin-bottom:12px">Values</div>
+        <div class="t-label" style="margin-bottom:14px">Values</div>
         <h2 class="t-h2">What we believe</h2>
       </div>
       <div class="steps-grid reveal reveal-delay-1">
         <div class="step-card">
           <div class="step-num">01</div>
           <div class="step-content">
-            <div class="step-icon">🎯</div>
+            <div class="step-icon"><i data-lucide="crosshair"></i></div>
             <div class="step-title">Focus</div>
             <div class="step-desc">We build one thing exceptionally well. No bloat, no feature creep, no distractions.</div>
           </div>
@@ -102,7 +114,7 @@
         <div class="step-card">
           <div class="step-num">02</div>
           <div class="step-content">
-            <div class="step-icon">⚡</div>
+            <div class="step-icon"><i data-lucide="gauge"></i></div>
             <div class="step-title">Speed</div>
             <div class="step-desc">Performance is a feature. Every millisecond matters. We optimize for the 99th percentile.</div>
           </div>
@@ -110,7 +122,7 @@
         <div class="step-card">
           <div class="step-num">03</div>
           <div class="step-content">
-            <div class="step-icon">🤝</div>
+            <div class="step-icon"><i data-lucide="eye"></i></div>
             <div class="step-title">Transparency</div>
             <div class="step-desc">Open roadmap, public changelog, honest pricing. We believe trust is earned through actions.</div>
           </div>
@@ -146,8 +158,9 @@ var nav=document.getElementById('navbar');
 window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60)},{passive:true});
 var hbtn=document.getElementById('hamburger'),mnav=document.getElementById('mobileNav');
 hbtn.addEventListener('click',function(){var open=mnav.classList.toggle('open');hbtn.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';});
-var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+lucide.createIcons();
 </script>
 </body>
 </html>
